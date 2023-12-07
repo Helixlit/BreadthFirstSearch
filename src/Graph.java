@@ -12,19 +12,23 @@ public class Graph {
         this.edges = new ArrayList();
     }
 
-    //TODO
-    public void addVertex() {}
+    public void addVertex(Vertex vertex) {
+        vertices.add(vertex);
+    }
 
-    //TODO
-    public void addEdge() {}
+    public void addEdge(Edge edge) {
+        edges.add(edge);
+    }
 
-    //TODO
-    public void removeVertex() {}
+    public void removeVertex(String vertexVal) {
+        int vertexIndex = this.getVertexIndex(vertexVal);
+        vertices.remove(vertices.get(vertexIndex));
+    }
 
-    //TODO
-    public void removeEdge() {}
+    public void removeEdge(Vertex[] vertices) {
 
-    //TODO
+    }
+
     public void getVertexValue() {}
 
     //TODO
@@ -35,4 +39,18 @@ public class Graph {
 
     //TODO
     public void setEdgeValue() {}
+
+    private int getEdgeIndex(int[] verticesIndex) {
+
+    }
+
+
+    public int getVertexIndex(String vertexVal) {
+        for (int i = 0; i < vertices.size()-1; i++) {
+            if (vertices.get(i).getValue() == vertexVal) return i;
+        }
+        return -1;
+    }
+
+
 }
