@@ -3,8 +3,8 @@ public class Edge {
     private int[] verticesIndex;
 
     public Edge(int[] verticesIndex, int value) {
-        this.verticesIndex = verticesIndex;
         this.value = value;
+        this.verticesIndex = verticesIndex;
     }
 
     public int getValue() {
@@ -13,5 +13,13 @@ public class Edge {
 
     public void setValue(int value) {
         this.value = value;
+    }
+
+    public int[] getVerticesIndex() {
+        return verticesIndex;
+    }
+
+    public void setVerticesIndex(int[] verticesIndex) {
+        this.verticesIndex = verticesIndex;
     }
 }
