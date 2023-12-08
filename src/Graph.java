@@ -47,6 +47,29 @@ public class Graph {
         }
     }
 
+    public void breadthFirstSearch(String root) {
+        generateMatrix();
+        List<Integer> queue = new ArrayList<>();
+
+        vertices.get(getVertexIndex(root)).explored = true;
+        queue.add(getVertexIndex(root));
+        System.out.print("Queue: "+root+", ");
+        int distance = 1;
+        while (queue.size() > 0) {
+            int selectedVert = queue.get(0);
+            for (int j = 0; j < vertices.size(); j++) {
+                if (matrix[selectedVert][j] > 0 && !(vertices.get(j).explored)) {
+                    vertices.get(j).explored = true;
+                    queue.add(j);
+                    System.out.print(vertices.get(j).getValue()+", ");
+                }
+
+            }
+            queue.remove(0);
+
+        }
+    }
+
     public void addVertex(Vertex vertex) { vertices.add(vertex);}
 
     public void addEdge(Edge edge) {edges.add(edge);}
